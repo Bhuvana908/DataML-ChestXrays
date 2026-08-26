@@ -165,7 +165,7 @@ A few sanity checks are also included afterward — comparing prediction average
 
 ---
 
-## 13. Extra Insight Analyses (Wildcard Section)
+## 13. Extra Insight Analyses
 
 Beyond just building a predictor, the notebook also includes exploratory visualizations to explain *what the data and model are actually picking up on*, including:
 
