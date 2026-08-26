@@ -200,13 +200,3 @@ No CNNs, no pretrained models, no deep learning frameworks (TensorFlow/PyTorch n
 4. Run all cells top to bottom — the notebook auto-detects the CSV and image folders.
 5. Extracted features are cached to Drive, so re-running the notebook later won't recompute everything from scratch.
 6. Final predictions are saved to `predictions.csv` inside the configured output folder on Drive.
-
----
-
-## 16. Project Structure (Outputs)
-
-- `predictions.csv` — final test predictions (one column per condition)
-- `eda_*.png` — exploratory data analysis charts
-- `wildcard_*.png` — extra insight visualizations
-- `feature_condition_mi.png`, `feature_separation_boxplots.png` — feature importance visuals
-- Cached feature matrices (`.parquet` files) — so feature extraction doesn't need to be redone every run
