@@ -26,10 +26,8 @@ Changes since the previous notebook (feature set G):
 - **SHAP interpretability (new):** SHAP summary plots per condition on the final ExtraTrees models, as a second, complementary lens to the mutual-information and permutation-importance views already in the notebook.
 - **Inference latency benchmark (new):** measures milliseconds-per-image for the full feature set (H) versus a cheaper subset (feature set C, dropping the slowest families — wavelet, Gabor, GLRLM), to report a speed/accuracy tradeoff rather than a single latency number.
 - **Composite asymmetry-severity index (new):** combines the existing symmetry, vessel-ratio, and lung-shape features into one interpretable number, and checks whether it tracks how many conditions a patient has at once, not just which single condition.
-- **Diagnostic fingerprint radar chart (new):** a per-condition mutual-information radar comparing all feature families (now including vessel/rib density), to show at a glance which type of visual clue each condition depends on most.
-- Several additional plain-language wildcard visualizations — a clinical urgency/severity gauge, a brightness-shift divergence meter, a clinical-priority pyramid, and an anatomical left/right laterality index — alongside the co-occurrence network graph and heatmap carried over from earlier wildcard submissions.
+- The diagnostic fingerprint radar chart now also reflects vessel/rib density, since it's computed over whichever feature families are present in the active feature set (H).
 
-This isn't a final state — the vessel feature family and the conformal-prediction uncertainty flags are the two things most likely to be tuned further next.
 
 ## 1. Overall Pipeline
 
@@ -147,12 +145,14 @@ All 4 models retrained on full training data, the per-condition ensemble method/
 
 - SHAP summary plots per condition (new), on the final ExtraTrees models.
 - Permutation importance per condition, on the final ExtraTrees models.
-- Mutual-information feature-family radar chart ("diagnostic fingerprint", new) — which feature family (texture, symmetry, vessel density, etc.) each condition depends on most.
+- Mutual-information feature-family radar chart ("diagnostic fingerprint", carried over from earlier versions) — which feature family (texture, symmetry, vessel density, etc.) each condition depends on most; now also covers vessel/rib density since that family is part of feature set H.
 - Mutual-information top-10-features bar chart and boxplots per condition.
 - PCA view of how visually distinct each condition is from a normal scan.
 - Composite asymmetry-severity index (new) combining symmetry, vessel-ratio, and lung-shape features, checked against how many conditions a patient has at once.
 
 ## 15. Extra Insight / Wildcard Visualizations
+
+All carried over unchanged from earlier notebook versions:
 
 - Condition co-occurrence, as a heatmap and as a Jaccard-weighted network graph.
 - Conditions-per-patient distribution, and which conditions drive multi-condition cases.
